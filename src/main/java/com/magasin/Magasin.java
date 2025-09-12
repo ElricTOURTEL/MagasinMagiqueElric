@@ -17,7 +17,7 @@ class Magasin {
                     }
                 }
             } else { // si le nom est comté ou pass vip concert
-                if (items[i].quality < 50) { //si la qualité des items autre que comté et pass vip est strictement inférieur à 50
+                if (items[i].quality < 50) { //si la qualité des items comté et pass vip est strictement inférieur à 50
                     items[i].quality = items[i].quality + 1; // on augmente la qualité de 1
 
                     if (items[i].name.equals("Pass VIP Concert")) { // si c'est pass vip specifiquement
