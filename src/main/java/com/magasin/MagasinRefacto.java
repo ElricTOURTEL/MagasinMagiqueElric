@@ -15,7 +15,13 @@ public class MagasinRefacto {
                 }
 
                 if (item.name.equals("Comté")) {
-                    item.quality = Math.min(50, item.quality+1);
+                    if(item.sellIn > 0){
+                        item.quality = Math.min(50, item.quality+1);
+                    }
+                    else{
+                        item.quality = Math.min(50, item.quality+2);
+                    }
+
                 }
                 if (item.name.equals("Pass VIP Concert")) {
                     if (item.sellIn <= 0) {
@@ -30,8 +36,8 @@ public class MagasinRefacto {
                 }
             } else {
                     if (item.quality > 0) {
-                        if (item.sellIn < 0) {
-                            item.quality = item.quality - 2;
+                        if (item.sellIn <= 0) {
+                            item.quality = Math.max(0, item.quality - 2);
                         } else {
                             item.quality--;
                         }
