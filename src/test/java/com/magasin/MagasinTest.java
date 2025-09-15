@@ -1,6 +1,5 @@
 package com.magasin;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -50,10 +49,10 @@ class MagasinTest {
             app.updateQuality();
             app2.updateQuality();
 
-            String snapLegacy = snapshot(itemsOrigine);
+            String snapOrigine = snapshot(itemsOrigine);
             String snapRefacto = snapshot(itemsRefacto);
 
-            assertEquals(snapLegacy, snapRefacto, "Mismatch au jour " + day);
+            assertEquals(snapOrigine, snapRefacto, "Mismatch au jour " + day);
         }
     }
 

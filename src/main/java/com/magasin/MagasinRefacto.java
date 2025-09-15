@@ -6,14 +6,15 @@ public class MagasinRefacto {
     public MagasinRefacto(Item[] items) {
         this.items = items;
     }
-
     public void updateQuality() {
         for (Item item : items) {
+            // rentre si cas specifique
             if (item.name.equals("Pass VIP Concert") || item.name.equals("Comté") || item.name.equals("Kryptonite")) {
+                // rentre si Kryptonite
                 if (item.name.equals("Kryptonite")) {
                     continue;
                 }
-
+                // rentre si Comté
                 if (item.name.equals("Comté")) {
                     if(item.sellIn > 0){
                         item.quality = Math.min(50, item.quality+1);
@@ -23,6 +24,7 @@ public class MagasinRefacto {
                     }
 
                 }
+                // Rentre si Pass Vip Concert
                 if (item.name.equals("Pass VIP Concert")) {
                     if (item.sellIn <= 0) {
                         item.quality = 0;
@@ -34,6 +36,7 @@ public class MagasinRefacto {
                         item.quality = Math.min(50, item.quality + 1);
                     }
                 }
+                // hors cas specifique
             } else {
                     if (item.quality > 0) {
                         if (item.sellIn <= 0) {
